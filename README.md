@@ -62,6 +62,51 @@ Alternatively, you can use [Docker](https://www.docker.com) to spin up this temp
 
 That's it! The Docker instance will help you get up and running quickly while also standardizing the development environment across your teams.
 
+## Working with Branches
+
+This repository uses multiple branches for different purposes. Here's how to work with them:
+
+### Pulling from the Mac Branch
+
+To pull changes from the `mac` branch, follow these steps:
+
+1. **Fetch the latest changes from remote:**
+   ```bash
+   git fetch origin
+   ```
+
+2. **View all available branches:**
+   ```bash
+   git branch -a
+   ```
+
+3. **Option A - Switch to the mac branch and pull:**
+   ```bash
+   git checkout mac
+   git pull origin mac
+   ```
+
+4. **Option B - Pull and merge mac branch changes into your current branch:**
+   ```bash
+   git pull origin mac
+   ```
+   This fetches and merges mac branch changes into your current branch in one command.
+
+5. **Option C - Merge mac branch into your current branch (after fetching):**
+   ```bash
+   git merge origin/mac
+   ```
+   Use this after step 1 (git fetch) to merge without re-fetching.
+
+### Common Branch Commands
+
+- **List local branches:** `git branch`
+- **List all branches (including remote):** `git branch -a`
+- **Create and switch to a new branch:** `git checkout -b <branch-name>`
+- **Switch to an existing branch:** `git checkout <branch-name>`
+- **Delete a local branch:** `git branch -d <branch-name>`
+- **Push your branch to remote:** `git push origin <branch-name>`
+
 ## Questions
 
 If you have any issues or questions, reach out to us on [Discord](https://discord.com/invite/payload) or start a [GitHub discussion](https://github.com/payloadcms/payload/discussions).
