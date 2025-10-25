@@ -86,16 +86,17 @@ To pull changes from the `mac` branch, follow these steps:
    git pull origin mac
    ```
 
-4. **Option B - Pull mac branch changes into your current branch:**
+4. **Option B - Pull and merge mac branch changes into your current branch:**
    ```bash
    git pull origin mac
    ```
+   This fetches and merges mac branch changes into your current branch in one command.
 
-5. **Option C - Merge mac branch into your current branch:**
+5. **Option C - Merge mac branch into your current branch (after fetching):**
    ```bash
-   git fetch origin
    git merge origin/mac
    ```
+   Use this after step 1 (git fetch) to merge without re-fetching.
 
 ### Common Branch Commands
 
