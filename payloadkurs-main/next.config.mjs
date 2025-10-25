@@ -1,0 +1,30 @@
+import { withPayload } from '@payloadcms/next/withPayload'
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  // Your Next.js config here
+  webpack: (webpackConfig) => {
+    webpackConfig.resolve.extensionAlias = {
+      '.cjs': ['.cts', '.cjs'],
+      '.js': ['.ts', '.tsx', '.js', '.jsx'],
+      '.mjs': ['.mts', '.mjs'],
+    }
+
+    return webpackConfig
+  },
+
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**', // Allow all HTTPS domains
+      },
+      {
+        protocol: 'http',
+        hostname: '**', // Allow all HTTP domains
+      },
+    ],
+  },
+}
+
+export default withPayload(nextConfig, { devBundleServerPackages: false })
